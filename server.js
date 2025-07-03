@@ -1,4 +1,5 @@
 
+
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
@@ -25,7 +26,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Configuração do multer para uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, 'uploads/'),
   filename: (req, file, cb) => {
